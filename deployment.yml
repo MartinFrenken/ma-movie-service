@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ma-movie-service
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: ma-movie-service
+    spec:
+      containers:
+      - name: ma-movie-service
+        image: eu.gcr.io/sixth-spot-273818/ma-movie-service
+        ports:
+        - containerPort: 4000
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m              
