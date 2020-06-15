@@ -8,15 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("movie/api")
-public class MovieController {
 
-    @Autowired
-    MovieService movieService;
-    @GetMapping("/movies")
-    public List<Movie> getAllMovies(){
-
-        return movieService.list();
+public class RootController {
+    @GetMapping("/")
+    public String healthCheck(){
+        return "health: ok";
     }
 }
 
