@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ma-movie-service
-        image: eu.gcr.io/sixth-spot-273818/ma-movie-service
+        image: eu.gcr.io/sixth-spot-273818/IMAGE:TAG
         ports:
         - containerPort: 4000
         resources:
